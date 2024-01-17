@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -88,8 +89,15 @@ public class TreePanel extends JPanel implements MouseListener {
 				BinaryNode bn = new BinaryNode(Integer.parseInt(s));
 				box.setText("");
 				tree.add(bn);
+				tree.fillLevels();
 				
 				System.out.println(tree.levelOrder()); // just for testing, can remove this line later
+				System.out.println(Arrays.toString(tree.level0()));
+				System.out.println(Arrays.toString(tree.level1()));
+				System.out.println(Arrays.toString(tree.level2()));
+				System.out.println(Arrays.toString(tree.level3()));
+				System.out.println(Arrays.toString(tree.level4()));
+				System.out.println(Arrays.toString(tree.level5()));
 			}
 			else {
 				showError = true;
