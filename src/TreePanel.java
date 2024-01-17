@@ -45,8 +45,30 @@ public class TreePanel extends JPanel implements MouseListener {
 		
 		
 		// draw edges
+		g.setColor(Color.black);
+		g.drawLine(940, 125, 465, 265); // LEVEL 0 to 1 edge
+		g.drawLine(940, 125, 1415, 265);
+		
+		g.drawLine(465, 265, 263, 405); // LEVEL 1 to 2 edge
+		g.drawLine(1413, 265, 1200, 405); 
+		
+		for (int i = 0; i < 8; i++) { // LEVEL 3 to 4 edge
+			g.drawLine(148 + 230 * i, 525, 77 + 230 * i, 685);
+		}
+		for (int i = 0; i < 8; i++) {
+			g.drawLine(146 + 230 * i, 525, 198 + 230 * i, 685);
+		}
+		
+		for (int i = 0; i < 16; i++) { // LEVEL 4 to 5 edge
+			g.drawLine(86 + 115 * i, 685, 56 + 116 * i, 825);
+		}
+		for (int i = 0; i < 16; i++) {
+			g.drawLine(86 + 115 * i, 685, 114 + 116 * i, 825);
+		}
+		
 		
 		// draw nodes
+		g.setColor(Color.white);
 		g.fillOval(915, 100, 50, 50); // LEVEL 0 nodes
 		
 		g.fillOval(440, 240, 50, 50); // LEVEL 1 nodes
