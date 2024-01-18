@@ -50,22 +50,24 @@ public class TreePanel extends JPanel implements MouseListener {
 		g.drawLine(940, 125, 1415, 265);
 		
 		g.drawLine(465, 265, 263, 405); // LEVEL 1 to 2 edge
+		g.drawLine(465, 265, 732, 405);
 		g.drawLine(1413, 265, 1200, 405); 
+		g.drawLine(1413, 265, 1668, 405);
+		
+		for (int i = 0; i < 4; i++) { // LEVEL 2 to 3 edge
+			g.drawLine(263 + 460 * i, 405, 158 + 460 * i, 525); 
+			g.drawLine(263 + 460 * i, 405, 370 + 460 * i, 525); 
+		}
 		
 		for (int i = 0; i < 8; i++) { // LEVEL 3 to 4 edge
 			g.drawLine(148 + 230 * i, 525, 77 + 230 * i, 685);
-		}
-		for (int i = 0; i < 8; i++) {
 			g.drawLine(146 + 230 * i, 525, 198 + 230 * i, 685);
 		}
 		
 		for (int i = 0; i < 16; i++) { // LEVEL 4 to 5 edge
 			g.drawLine(86 + 115 * i, 685, 56 + 116 * i, 825);
-		}
-		for (int i = 0; i < 16; i++) {
 			g.drawLine(86 + 115 * i, 685, 114 + 116 * i, 825);
 		}
-		
 		
 		// draw nodes
 		g.setColor(Color.white);
@@ -91,6 +93,18 @@ public class TreePanel extends JPanel implements MouseListener {
 		}
 		
 		// fill in the nodes
+		g.setFont(new Font("Garamond", Font.BOLD, 18));
+		g.setColor(Color.black);
+		if (tree.level0().length != 0 && tree.level0()[0] != null) { // root node
+			g.drawString("" + tree.level0()[0], 928, 132);
+		}
+		
+		if (tree.level1().length != 0 && tree.level1()[0] != null  && (int)tree.level1()[0] != -6969911) { // LEVEL 1 nodes
+			
+		}
+		if (tree.level1().length != 0 && tree.level1()[1] != null && (int)tree.level1()[1] != -6969911) { // LEVEL 1 nodes
+			
+		}
 	}
 
 	@Override
