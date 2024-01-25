@@ -15,9 +15,9 @@ public class TreePanel extends JPanel implements MouseListener {
 	public TreePanel() {
 		setLayout(null);
 		setBackground(new Color(195, 195, 254));
-		JLabel title = new JLabel("Graphic Binary Tree");
+		JLabel title = new JLabel("Graphic Binary Search Tree");
 		title.setFont(new Font("Cambria", Font.BOLD, 50));
-		title.setBounds(707, 10, 600, 90);
+		title.setBounds(640, 10, 649, 90);
 		add(title);
 		
 		box = new JTextField(8);
@@ -93,17 +93,41 @@ public class TreePanel extends JPanel implements MouseListener {
 		}
 		
 		// fill in the nodes
-		g.setFont(new Font("Garamond", Font.BOLD, 18));
+		g.setFont(new Font("Garamond", Font.BOLD, 19));
 		g.setColor(Color.black);
 		if (tree.level0().length != 0 && tree.level0()[0] != null) { // root node
 			g.drawString("" + tree.level0()[0], 928, 132);
 		}
 		
 		if (tree.level1().length != 0 && tree.level1()[0] != null  && (int)tree.level1()[0] != -6969911) { // LEVEL 1 nodes
-			
+			g.drawString("" + tree.level1()[0], 452, 272);
 		}
-		if (tree.level1().length != 0 && tree.level1()[1] != null && (int)tree.level1()[1] != -6969911) { // LEVEL 1 nodes
-			
+		if (tree.level1().length != 0 && tree.level1()[1] != null && (int)tree.level1()[1] != -6969911) { 
+			g.drawString("" + tree.level1()[1], 1402, 272);
+		}
+		
+		for (int i = 0; i < 4; i++) {
+			if (tree.level2().length != 0 && tree.level2()[i] != null && (int)tree.level2()[i] != -6969911) { // LEVEL 2 nodes
+				g.drawString("" + tree.level2()[i], 251 + i * 460, 412);
+			}
+		}
+		
+		for (int i = 0; i < 8; i++) {
+			if (tree.level3().length != 0 && tree.level3()[i] != null && (int)tree.level3()[i] != -6969911) { // LEVEL 3 nodes
+				g.drawString("" + tree.level3()[i], 131 + i * 230, 552);
+			}
+		}
+		
+		for (int i = 0; i < 16; i++) {
+			if (tree.level4().length != 0 && tree.level4()[i] != null && (int)tree.level4()[i] != -6969911) { // LEVEL 4 nodes
+				g.drawString("" + tree.level4()[i], 71 + i * 115, 692);
+			}
+		}
+		
+		for (int i = 0; i < 32; i++) {
+			if (tree.level5().length != 0 && tree.level5()[i] != null && (int)tree.level5()[i] != -6969911) { // LEVEL 5 nodes
+				g.drawString("" + tree.level5()[i], 40 + i * 58, 832);
+			}
 		}
 	}
 
