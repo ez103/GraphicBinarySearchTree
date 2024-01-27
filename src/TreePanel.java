@@ -146,7 +146,14 @@ public class TreePanel extends JPanel implements MouseListener {
 		if (x >= 1190 && x <= 1290 && y >= 885 && y <= 945) {
 			String s = box.getText();
 			if (isInteger(s)) {
-				BinaryNode bn = new BinaryNode(Integer.parseInt(s));
+				BinaryNode bn;
+				if (s.charAt(0) == '-') {
+					bn = new BinaryNode((-1) *Integer.parseInt(s.substring(1)));
+				}
+				else {
+					bn = new BinaryNode(Integer.parseInt(s));
+				}
+				
 				box.setText("");
 				tree.add(bn);
 				tree.fillLevels();
@@ -186,6 +193,9 @@ public class TreePanel extends JPanel implements MouseListener {
 	}
 	
 	public static boolean isInteger(String s) {
+		if (s.charAt(0) == '-' && s.length() > 1) { // could be a negative integer
+			return isInteger(s.substring(1));
+		}
 		for (char c : s.toCharArray()) {
 			if (c < 48 || c > 57) {
 				return false;
