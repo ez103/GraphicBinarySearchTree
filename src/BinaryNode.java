@@ -22,6 +22,9 @@ public class BinaryNode {
 		return right;
 	}
 	
+	public void setValue(Comparable x) {
+		myValue = x;
+	}
 	public Comparable getValue() {
 		return myValue;
 	}

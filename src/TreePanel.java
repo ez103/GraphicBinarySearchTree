@@ -35,13 +35,15 @@ public class TreePanel extends JPanel implements MouseListener {
 		super.paint(g);
 		
 		setFont(new Font("Cambria", Font.PLAIN, 25));
-		g.drawString("Please enter a number to add to the tree: ", 612, 922);
+		g.drawString("Please enter a number to add to or remove from the tree: ", 450, 922);
 		
 		g.setColor(new Color(73, 0, 0));
-		g.fillOval(1190, 885, 100, 60);
+		g.fillOval(1190, 885, 100, 60); // add button
+		g.fillOval(1300, 885, 100, 60); // remove button
 		g.setColor(Color.white);
 		g.setFont(new Font("Calibri", Font.BOLD, 25));
 		g.drawString("ADD", 1215, 922);
+		g.drawString("REMOVE", 1303, 922);
 		
 		
 		// draw edges
@@ -168,6 +170,32 @@ public class TreePanel extends JPanel implements MouseListener {
 			}
 			else {
 				showError = true;
+			}
+		}
+		
+		// g.fillOval(1300, 885, 100, 60); // remove button
+		else if (x >= 1300 && x <= 1400 && y >= 885 && y <= 945) {
+			String s = box.getText();
+			if (isInteger(s)) {
+				int boob;
+				if (s.charAt(0) == '-') {
+					boob = (-1) * Integer.parseInt(s.substring(1));
+				}
+				else {
+					boob = Integer.parseInt(s);
+				}
+				
+				box.setText("");
+				tree.remove(boob);
+				tree.fillLevels();
+				
+				System.out.println(tree.levelOrder()); // just for testing, can remove this line later
+				System.out.println(Arrays.toString(tree.level0()));
+				System.out.println(Arrays.toString(tree.level1()));
+				System.out.println(Arrays.toString(tree.level2()));
+				System.out.println(Arrays.toString(tree.level3()));
+				System.out.println(Arrays.toString(tree.level4()));
+				System.out.println(Arrays.toString(tree.level5()));
 			}
 		}
 	}
