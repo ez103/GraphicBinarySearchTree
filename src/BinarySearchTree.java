@@ -71,6 +71,9 @@ public class BinarySearchTree {
 	
 	
 	public String levelOrder() {
+		if (root == null) {
+			return "";
+		}
 		String temp = "";
 		Queue<BinaryNode> q = new LinkedList<>();
 		q.offer(root);
@@ -134,7 +137,7 @@ public class BinarySearchTree {
 				inorderSuccessor = successor(root);
 				swap(root, inorderSuccessor);
 				
-				if (root.right() == inorderSuccessor.right()) {
+				if (root.right() == inorderSuccessor) {
 					root.setRight(inorderSuccessor.right());
 					inorderSuccessor.setRight(null);
 					return inorderSuccessor;
@@ -192,7 +195,7 @@ public class BinarySearchTree {
 		if (parent == null) {
 			return null;
 		}
-		if (parent.left() != null && parent.left().getValue().equals(target) 
+		if (parent.left()!=null && parent.left().getValue().equals(target) 
 				|| parent.right()!=null && parent.right().getValue().equals(target)) {
 			return parent;
 		}
@@ -208,6 +211,7 @@ public class BinarySearchTree {
 	public void fillLevels() {
 		
 		if (root == null) {
+			level0[0] = -6969911;
 			return;
 		}
 		

@@ -97,7 +97,7 @@ public class TreePanel extends JPanel implements MouseListener {
 		// fill in the nodes
 		g.setFont(new Font("Garamond", Font.BOLD, 19));
 		g.setColor(Color.black);
-		if (tree.level0().length != 0 && tree.level0()[0] != null) { // root node
+		if (tree.level0().length != 0 && tree.level0()[0] != null && (int)tree.level0()[0] != -6969911) { // root node
 			g.drawString("" + tree.level0()[0], 928, 132);
 		}
 		
@@ -198,6 +198,8 @@ public class TreePanel extends JPanel implements MouseListener {
 				System.out.println(Arrays.toString(tree.level5()));
 			}
 		}
+		
+		repaint();
 	}
 	
 	
