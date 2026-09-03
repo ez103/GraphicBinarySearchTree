@@ -177,16 +177,16 @@ public class TreePanel extends JPanel implements MouseListener {
 		else if (x >= 1300 && x <= 1400 && y >= 885 && y <= 945) {
 			String s = box.getText();
 			if (isInteger(s)) {
-				int boob;
+				int boo;
 				if (s.charAt(0) == '-') {
-					boob = (-1) * Integer.parseInt(s.substring(1));
+					boo = (-1) * Integer.parseInt(s.substring(1));
 				}
 				else {
-					boob = Integer.parseInt(s);
+					boo = Integer.parseInt(s);
 				}
 				
 				box.setText("");
-				tree.remove(boob);
+				tree.remove(boo);
 				tree.fillLevels();
 				
 				System.out.println(tree.levelOrder()); // just for testing, can remove this line later
