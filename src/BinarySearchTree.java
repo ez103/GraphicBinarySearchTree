@@ -79,13 +79,13 @@ public class BinarySearchTree {
 		q.offer(root);
 		
 		while (!q.isEmpty()) {
-			BinaryNode boob = q.poll();
-			temp += boob.getValue() + " ";
-			if (boob.left() != null) {
-				q.offer(boob.left());
+			BinaryNode boo = q.poll();
+			temp += boo.getValue() + " ";
+			if (boo.left() != null) {
+				q.offer(boo.left());
 			}
-			if (boob.right() != null) {
-				q.offer(boob.right());
+			if (boo.right() != null) {
+				q.offer(boo.right());
 			}
 		}
 		
